@@ -101,14 +101,36 @@ uv run client.py
 
 ### 4. (Optional) Install MCP Inspector for Debugging
 
+
 ```bash
 npm install -g @modelcontextprotocol/inspector@0.18.0
 ```
 
-### 5. Run and Inspect the MCP Server
+To run the MCP Inspector with your server:
 
 ```bash
-mcp dev ./weather.py
+mcp dev local.py
 ```
 
-Open the MCP Inspector in your browser (usually at http://localhost:5173).
+
+### 5. Configure Claude Desktop to Use Your MCP Server
+
+Instead of running `mcp dev`, you can configure Claude Desktop to launch your MCP server automatically. Add the following to your Claude MCP config and restart Claude Desktop:
+
+```json
+{
+  "mcpServers": {
+    "LocalNotes": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "<path-to-your-project>/mcp-deep-dive",
+        "run",
+        "local.py"
+      ]
+    }
+  }
+}
+```
+
+This will allow Claude Desktop to start and connect to your MCP server automatically.

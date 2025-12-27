@@ -1,2 +1,3 @@
 Hello MCP tool
 How are you doing ?
+Ive succesfully integrated mcp with claude
