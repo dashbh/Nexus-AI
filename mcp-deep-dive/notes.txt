@@ -1,0 +1,2 @@
+Hello MCP tool
+How are you doing ?
